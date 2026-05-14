@@ -145,14 +145,136 @@ body {
   margin-top: 20px;
 }
 .item-badge {
-  background-color: rgb(143, 143, 143);
+  background-color: rgb(227, 227, 227);
   border-radius: 10px;
   padding: 10px 10px;
 }
-.item-badge span {
-  background-color: rgb(255, 166, 0);
+.badge-count {
+  background-color: rgb(255, 170, 0);
   font-size: 23px;
   color: #fff;
   border-radius: 50%;
   padding: 5px 12px;
+}
+.sidebar-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 2px solid #cfcfcf;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.sidebar-block:last-child {
+  border-bottom: none;
+}
+.sidebar-block h2 {
+  border-bottom: 2px solid #cfcfcf;
+  padding-bottom: 20px;
+}
+.bought span {
+  text-decoration: line-through;
+}
+.badge-countPo {
+  text-decoration: line-through;
+  background-color: rgb(255, 170, 0);
+  font-size: 23px;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 12px;
+}
+.badge {
+  position: fixed;
+  left: 20px;
+  bottom: 0;
+
+  background-color: #5b2cff;
+  color: white;
+
+  padding: 15px 25px;
+
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+
+  transition: 0.3s;
+}
+.badge-author {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+
+  transition: 0.3s;
+}
+.badge:hover {
+  transform: translateY(-20px);
+  background-color: #7a52ff;
+}
+.badge:hover .badge-author {
+  opacity: 1;
+  max-height: 40px;
+}
+@media print {
+  .badge {
+    background: white;
+    color: #5b2cff;
+    border: 2px solid #5b2cff;
+  }
+  .badge-title {
+    display: none;
+  }
+  .badge-author {
+    opacity: 1;
+    max-height: 100px;
+  }
+}
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .product-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+button {
+  position: relative;
+}
+button::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 140%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  transform: translateX(-50%) scale(0);
+
+  background-color: #5b2cff;
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transition: 0.3s;
+}
+button:hover::after {
+  opacity: 1;
+
+  transform: translateX(-50%) scale(1);
+}
+.disabled {
+  background-color: #e8a0a0;
+  opacity: 0.7;
+  cursor: not-allowed;
 }
