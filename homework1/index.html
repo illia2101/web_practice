@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy List</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="buy-list">
+        <form class="add-form">
+          <label for="product-name" class="visually-hidden">Назва товару</label>
+          <input
+            type="text"
+            id="product-name"
+            placeholder="Назва товару"
+            required
+          />
+          <button type="submit">Додати</button>
+        </form>
+        <ul class="products">
+          <li class="product-item">
+            <span class="product-name bought">Помідори</span>
+            <div class="counter test-counter">
+              <span class="quantity">2</span>
+            </div>
+            <div class="actions">
+              <button
+                class="status-button"
+                data-tooltip="Позначити як не куплено"
+              >
+                Не куплено
+              </button>
+            </div>
+          </li>
+
+          <li class="product-item">
+            <span class="product-name">Печиво</span>
+            <div class="counter">
+              <button class="decrease" data-tooltip="Зменшити кількість">
+                -
+              </button>
+              <span class="quantity">2</span>
+              <button class="increase" data-tooltip="Збільшити кількість">
+                +
+              </button>
+            </div>
+            <div class="actions">
+              <button class="status-button" data-tooltip="Позначити як куплено">
+                Куплено
+              </button>
+              <button class="delete" aria-label="Видалити товар">✖</button>
+            </div>
+          </li>
+
+          <li class="product-item">
+            <input type="text" value="Сир" class="edit-input" />
+            <div class="counter">
+              <button class="decrease" data-tooltip="Зменшити кількість">
+                -
+              </button>
+              <span class="quantity">1</span>
+              <button class="increase" data-tooltip="Збільшити кількість">
+                +
+              </button>
+            </div>
+            <div class="actions">
+              <button class="status-button" data-tooltip="Позначити як куплено">
+                Куплено
+              </button>
+              <button class="delete" aria-label="Видалити товар">✖</button>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <aside class="sidebar">
+        <section class="sidebar-block">
+          <h2>Залишилося</h2>
+          <div class="badge-list">
+            <div class="item-badge">
+              Печиво
+              <span>2</span>
+            </div>
+            <div class="item-badge">
+              Сир
+              <span>1</span>
+            </div>
+          </div>
+        </section>
+        <section class="sidebar-block">
+          <h2>Куплено</h2>
+          <div class="badge-list">
+            <div class="item-badge">
+              Помідори
+              <span>2</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>
