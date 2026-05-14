@@ -11,7 +11,7 @@ body {
 .container {
   display: flex;
   gap: 20px;
-  align-items: stretch;
+  align-items: flex-start;
 }
 .buy-list,
 .sidebar {
@@ -68,6 +68,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+
+  border-top: 2px solid #ccc;
 }
 
 .counter {
