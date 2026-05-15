@@ -217,8 +217,8 @@ body {
 @media print {
   .badge {
     background: white;
-    color: #5b2cff;
-    border: 2px solid #5b2cff;
+    color: #c800ff;
+    border: 2px solid #ea00ff;
   }
   .badge-title {
     display: none;
