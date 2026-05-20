@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grades</title>
+  </head>
+  <body>
+    <script>
+      const grades = [78, 92, 45, 88, 67, 39, 95, 71, 82, 58, 90, 64];
+      // task 1: calculate the average grade
+      function average(grades) {
+        let num = grades.length;
+        let sum = 0;
+
+        for (let i = 0; i < num; i++) {
+          sum += grades[i];
+        }
+
+        return Number((sum / num).toFixed(1));
+      }
+
+      console.log(average(grades));
+      // task 2: find the highest grade
+      function highest(grades) {
+        let max = grades[0];
+        for (let i = 0; i < grades.length; i++) {
+          if (grades[i] > max) {
+            max = grades[i];
+          }
+        }
+        return max;
+      }
+      console.log(highest(grades));
+
+      function lowest(grades) {
+        let min = grades[0];
+        for (let i = 0; i < grades.length; i++) {
+          if (grades[i] < min) {
+            min = grades[i];
+          }
+        }
+        return min;
+      }
+      console.log(lowest(grades));
+
+      function passRate(grades, threshold = 60) {
+        let passed = 0;
+        for (let i = 0; i < grades.length; i++) {
+          if (grades[i] >= threshold) {
+            passed++;
+          }
+        }
+        return Number(((passed / grades.length) * 100).toFixed(1));
+      }
+      console.log(passRate(grades));
+
+      function distribution(grades) {
+        let lessSixteen = 0;
+        let betweenSixtyAndSnine = 0;
+        let betweenSeventyAndSnine = 0;
+        let betweenEightyAndEnine = 0;
+        let betweenNinetyAndHnine = 0;
+        for (let i = 0; i < grades.length; i++) {
+          if (grades[i] < 60) {
+            lessSixteen++;
+          } else if (grades[i] >= 60 && grades[i] <= 69) {
+            betweenSixtyAndSnine++;
+          } else if (grades[i] >= 70 && grades[i] <= 79) {
+            betweenSeventyAndSnine++;
+          } else if (grades[i] >= 80 && grades[i] <= 89) {
+            betweenEightyAndEnine++;
+          } else if (grades[i] >= 90 && grades[i] <= 100) {
+            betweenNinetyAndHnine++;
+          }
+        }
+        return {
+          "<60": lessSixteen,
+          "60-69": betweenSixtyAndSnine,
+          "70-79": betweenSeventyAndSnine,
+          "80-89": betweenEightyAndEnine,
+          "90-100": betweenNinetyAndHnine,
+        };
+      }
+      console.log(distribution(grades));
+    </script>
+  </body>
+</html>

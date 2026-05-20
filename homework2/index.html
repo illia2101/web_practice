@@ -18,7 +18,7 @@
             placeholder="Назва товару"
             required
           />
-          <button type="submit">Додати</button>
+          <button type="submit" data-tooltip="Додати товар">Додати</button>
         </form>
         <ul class="products">
           <li class="product-item">
@@ -51,14 +51,23 @@
               <button class="status-button" data-tooltip="Позначити як куплено">
                 Куплено
               </button>
-              <button class="delete" aria-label="Видалити товар">✖</button>
+              <button
+                class="delete"
+                aria-label="Видалити товар"
+                data-tooltip="Видалити товар"
+              >
+                ✖
+              </button>
             </div>
           </li>
 
           <li class="product-item">
             <input type="text" value="Сир" class="edit-input" />
             <div class="counter">
-              <button class="decrease" data-tooltip="Зменшити кількість">
+              <button
+                class="decrease disabled"
+                data-tooltip="Зменшити кількість"
+              >
                 -
               </button>
               <span class="quantity">1</span>
@@ -70,7 +79,13 @@
               <button class="status-button" data-tooltip="Позначити як куплено">
                 Куплено
               </button>
-              <button class="delete" aria-label="Видалити товар">✖</button>
+              <button
+                class="delete"
+                aria-label="Видалити товар"
+                data-tooltip="Видалити товар"
+              >
+                ✖
+              </button>
             </div>
           </li>
         </ul>
@@ -82,11 +97,11 @@
           <div class="badge-list">
             <div class="item-badge">
               Печиво
-              <span>2</span>
+              <span class="badge-count">2</span>
             </div>
             <div class="item-badge">
               Сир
-              <span>1</span>
+              <span class="badge-count">1</span>
             </div>
           </div>
         </section>
@@ -94,12 +109,16 @@
           <h2>Куплено</h2>
           <div class="badge-list">
             <div class="item-badge">
-              Помідори
-              <span>2</span>
+              <span class="bought">Помідори</span>
+              <span class="badge-countPo">2</span>
             </div>
           </div>
         </section>
       </aside>
+    </div>
+    <div class="badge">
+      <span class="badge-title">BuyList</span>
+      <span class="badge-author">Робота: Кабиш Ілля</span>
     </div>
   </body>
 </html>
