@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = [
+        { name: "Олена", age: 19, grades: [82, 91, 75], group: "ІПЗ-1" },
+        { name: "Іван", age: 20, grades: [55, 68, 72], group: "ІПЗ-2" },
+        { name: "Марія", age: 19, grades: [95, 88, 92], group: "ІПЗ-1" },
+      ];
+      function getNames(students) {
+        return students.map((student) => student.name);
+      }
+      console.log(getNames(students));
+      function getByGroup(students, group) {
+        return students.filter((student) => student.group === group);
+      }
+      console.log(getByGroup(students, "ІПЗ-1"));
+
+      function topStudents(students, n = 3) {
+        function average(grades) {
+          return grades.reduce((sum, grade) => sum + grade, 0) / grades.length;
+        }
+
+        return students
+          .slice()
+          .sort((a, b) => average(b.grades) - average(a.grades))
+          .slice(0, n);
+      }
+      console.log(topStudents(students));
+    </script>
+  </body>
+</html>
