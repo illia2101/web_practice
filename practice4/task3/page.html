@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3 — Перемикач тем</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #2050a0;
+      --surface: #f6f8fa;
+    }
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #eee;
+      --accent: #4c8af0;
+      --surface: #2a2a2a;
+    }
+    body {
+        
+      background: var(--bg); color: var(--text);
+      transition: background 0.2s, color 0.2s;
+      font-family: -apple-system, sans-serif;
+      max-width: 640px; margin: 0 auto; padding: 2rem 1rem;
+      line-height: 1.5;
+      /* TODO: додайте плавний transition (~0.2 секунди) */
+    }
+    h1 { color: var(--accent); }
+    .card {
+        transition: background 0.2s;
+      background: var(--surface); padding: 1rem;
+      border-radius: 6px; margin: 1rem 0;
+    }
+    #theme-toggle {
+      background: var(--accent); color: white; border: none;
+      padding: 8px 16px; border-radius: 6px; cursor: pointer;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="theme-toggle">🌙 Темна тема</button>
+
+  <h1>Сторінка з темами</h1>
+
+  <p>Це звичайна сторінка. Натисніть кнопку — і фон змінюється. Перезавантажте — тема має зберегтись.</p>
+
+  <div class="card">
+    <h2>Перша картка</h2>
+    <p>Колір картки залежить від теми. У світлій — світло-сірий. У темній — темно-сірий.</p>
+  </div>
+
+  <div class="card">
+    <h2>Друга картка</h2>
+    <p>Те саме, бо вони мають однакові класи.</p>
+  </div>
+
+  <script src="theme.js"></script>
+</body>
+</html>
